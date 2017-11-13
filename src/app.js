@@ -24,3 +24,7 @@ function login(form) {
         formErrors.password = "La contraseña no es válida";
     }
 }
+
+function submitForm() {
+    
+}
