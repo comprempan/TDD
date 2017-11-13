@@ -59,11 +59,15 @@ describe("Login", function() {
         });
 
         describe("valid form", function() {
+            beforeEach(function() {
+                spyOn(window, "submitForm");
+            });
+
             it("Should call submitForm method to send the form", function() {
                 //given
                 form.name = "lucas";
                 form.email = "lucas.grijander@gmail.com";
-                form.password = "shgre23k";
+                form.password = "S5fksuih";
                 //when
                 login(form);
                 //then
