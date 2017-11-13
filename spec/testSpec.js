@@ -55,6 +55,13 @@ describe("Login", function() {
 
         describe("valid form", function() {
             it("Should call submitForm method to send the form", function() {
+                //given
+                form.name = "lucas";
+                form.email = "lucas.grijander@gmail.com";
+                form.password = "shgre23k";
+                //when
+                login(form);
+                //then
                 expect(submitForm).toHaveBeenCalled();
             });
         });
