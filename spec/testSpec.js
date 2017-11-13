@@ -42,6 +42,15 @@ describe("Login", function() {
                 //then
                 expect(formErrors.password).toEqual("La contraseña no puede estar vacía");
             });
+
+            it("Should show a error message if the password is invalid", function() {
+                //Given
+                form.password = "pass";
+                //When
+                login(form);
+                //then
+                expect(formErrors.password).toEqual("La contraseña no es válida");
+            });
         });
     });
 });
