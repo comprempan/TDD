@@ -13,7 +13,8 @@ describe("Login", function() {
                 //when
                 login(form);
                 //then
-                expect(formErrors.name).toEqual("El usuario no puede estar vacío");
+                expect(validForm.errors.name).toEqual("El usuario no puede estar vacío");
+                expect(validForm.valid.name).toEqual(false);
             });
         });
 
@@ -22,7 +23,8 @@ describe("Login", function() {
                 //When
                 login(form);
                 //then
-                expect(formErrors.email).toEqual("El email no puede estar vacío");
+                expect(validForm.errors.email).toEqual("El email no puede estar vacío");
+                expect(validForm.valid.email).toEqual(false);
             });
 
             it("Should show a error message if the email is invalid", function() {
@@ -31,7 +33,8 @@ describe("Login", function() {
                 //When
                 login(form);
                 //then
-                expect(formErrors.email).toEqual("El email no es válido");
+                expect(validForm.errors.email).toEqual("El email no es válido");
+                expect(validForm.valid.email).toEqual(false);
             });
         });
 
@@ -40,7 +43,8 @@ describe("Login", function() {
                 //When
                 login(form);
                 //then
-                expect(formErrors.password).toEqual("La contraseña no puede estar vacía");
+                expect(validForm.errors.password).toEqual("La contraseña no puede estar vacía");
+                expect(validForm.valid.password).toEqual(false);
             });
 
             it("Should show a error message if the password is invalid", function() {
@@ -49,7 +53,8 @@ describe("Login", function() {
                 //When
                 login(form);
                 //then
-                expect(formErrors.password).toEqual("La contraseña no es válida");
+                expect(validForm.errors.password).toEqual("La contraseña no es válida");
+                expect(validForm.valid.password).toEqual(false);
             });
         });
 
