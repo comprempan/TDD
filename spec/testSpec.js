@@ -34,5 +34,14 @@ describe("Login", function() {
                 expect(formErrors.email).toEqual("El email no es válido");
             });
         });
+
+        describe("invalid password", function() {
+            it("Should show a error message if the password is empty", function() {
+                //When
+                login(form);
+                //then
+                expect(formErrors.password).toEqual("La contraseña no puede estar vacía");
+            });
+        });
     });
 });
