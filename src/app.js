@@ -16,4 +16,8 @@ function login(form) {
     } else if(!emailRegex.test(form.email)) {
         formErrors.email = "El email no es válido";
     }
+
+    if(!form.password || form.password === "") {
+        formErrors.password = "La contraseña no puede estar vacía";
+    }
 }
