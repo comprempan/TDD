@@ -7,58 +7,60 @@ describe("Login", function() {
             password: null
         };
 
-        describe("invalid name", function() {
-            it("Should show a error message if the name is empty", function() {
-                //given
-                //when
-                login(form);
-                //then
-                expect(validForm.errors.name).toEqual("El usuario no puede estar vacío");
-                expect(validForm.valid.name).toEqual(false);
+        describe("Invalid Form", function() {
+            describe("invalid name", function() {
+                it("Should show a error message if the name is empty", function() {
+                    //given
+                    //when
+                    login(form);
+                    //then
+                    expect(validForm.errors.name).toEqual("El usuario no puede estar vacío");
+                    expect(validForm.valid.name).toEqual(false);
+                });
+            });
+    
+            describe("invalid email", function() {
+                it("Should show a error message if the email is empty", function() {
+                    //When
+                    login(form);
+                    //then
+                    expect(validForm.errors.email).toEqual("El email no puede estar vacío");
+                    expect(validForm.valid.email).toEqual(false);
+                });
+    
+                it("Should show a error message if the email is invalid", function() {
+                    //Given
+                    form.email = "email";
+                    //When
+                    login(form);
+                    //then
+                    expect(validForm.errors.email).toEqual("El email no es válido");
+                    expect(validForm.valid.email).toEqual(false);
+                });
+            });
+    
+            describe("invalid password", function() {
+                it("Should show a error message if the password is empty", function() {
+                    //When
+                    login(form);
+                    //then
+                    expect(validForm.errors.password).toEqual("La contraseña no puede estar vacía");
+                    expect(validForm.valid.password).toEqual(false);
+                });
+    
+                it("Should show a error message if the password is invalid", function() {
+                    //Given
+                    form.password = "pass";
+                    //When
+                    login(form);
+                    //then
+                    expect(validForm.errors.password).toEqual("La contraseña no es válida");
+                    expect(validForm.valid.password).toEqual(false);
+                });
             });
         });
 
-        describe("invalid email", function() {
-            it("Should show a error message if the email is empty", function() {
-                //When
-                login(form);
-                //then
-                expect(validForm.errors.email).toEqual("El email no puede estar vacío");
-                expect(validForm.valid.email).toEqual(false);
-            });
-
-            it("Should show a error message if the email is invalid", function() {
-                //Given
-                form.email = "email";
-                //When
-                login(form);
-                //then
-                expect(validForm.errors.email).toEqual("El email no es válido");
-                expect(validForm.valid.email).toEqual(false);
-            });
-        });
-
-        describe("invalid password", function() {
-            it("Should show a error message if the password is empty", function() {
-                //When
-                login(form);
-                //then
-                expect(validForm.errors.password).toEqual("La contraseña no puede estar vacía");
-                expect(validForm.valid.password).toEqual(false);
-            });
-
-            it("Should show a error message if the password is invalid", function() {
-                //Given
-                form.password = "pass";
-                //When
-                login(form);
-                //then
-                expect(validForm.errors.password).toEqual("La contraseña no es válida");
-                expect(validForm.valid.password).toEqual(false);
-            });
-        });
-
-        describe("valid form", function() {
+        describe("Valid form", function() {
             beforeEach(function() {
                 spyOn(window, "submitForm");
             });
