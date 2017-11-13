@@ -52,5 +52,11 @@ describe("Login", function() {
                 expect(formErrors.password).toEqual("La contraseña no es válida");
             });
         });
+
+        describe("valid form", function() {
+            it("Should call submitForm method to send the form", function() {
+                expect(submitForm).toHaveBeenCalled();
+            });
+        });
     });
 });
