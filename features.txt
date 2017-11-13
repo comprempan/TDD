@@ -1,0 +1,20 @@
+Feature: Sing up
+
+Examples:
+
+Formulario invalido
+Si no hay usuario ---> mensaje error usuario obligatorio
+Si no hay email -----> mensaje error email obligatorio
+Si no hay pass  -----> mensaje error pass obligatorio
+
+Si hay email pero no valido ---> mensaje email no valido
+
+Si hay password pero no valido ---> mensaje password no valido
+
+**Siempre se validan todos los campos para mostrar los mensajes de error en cada campos
+**La contraseña debe de tener al menos una letra, un número y 7 caracteres o mas.
+
+
+Formulario valido
+Hay nombre, email valido y password valido ---> llamamos al submitForm
+
