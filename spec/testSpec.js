@@ -16,5 +16,14 @@ describe("Login", function() {
                 expect(formErrors.name).toEqual("El usuario no puede estar vacío");
             });
         });
+
+        describe("invalid email", function() {
+            it("Should show a error message if the email is empty", function() {
+                //When
+                login(form);
+                //then
+                expect(formErrors.email).toEqual("El email no puede estar vacío");
+            });
+        });
     });
 });
