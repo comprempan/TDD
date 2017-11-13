@@ -6,6 +6,7 @@ var formErrors = {
 
 function login(form) {
     var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    var passRegex = /(?=^.{7,}$)((?=.*\d)|(?=.*\W+))(?=.*[A-Z])(?=.*[a-z]).*$/;
 
     if(!form.name || form.name === "") {
         formErrors.name = "El usuario no puede estar vacío";
@@ -19,5 +20,7 @@ function login(form) {
 
     if(!form.password || form.password === "") {
         formErrors.password = "La contraseña no puede estar vacía";
+    } else if(!passRegex.test(form.password)) {
+        formErrors.password = "La contraseña no es válida";
     }
 }
