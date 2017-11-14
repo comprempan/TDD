@@ -22,9 +22,11 @@ describe("FizzBuzz", function() {
             expect(result).toEqual('Buzz');
         });
     });
-    
 
-    
-
-    
+    describe("multiplos de 3 y 5", function() {
+        it('should return Buzz for 15', function() {
+            var result = FizzBuzz.check(15);
+            expect(result).toEqual('FizzBuzz');
+        });
+    });
 });
