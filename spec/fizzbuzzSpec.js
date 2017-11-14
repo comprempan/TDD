@@ -8,4 +8,9 @@ describe("FizzBuzz", function() {
         var result = FizzBuzz.check(9);
         expect(result).toEqual('Fizz');
     });
+
+    it('should return Buzz for 5', function() {
+        var result = FizzBuzz.check(5);
+        expect(result).toEqual('Buzz');
+    });
 });
