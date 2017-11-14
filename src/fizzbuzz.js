@@ -4,6 +4,10 @@
 var FizzBuzz = function() {
     
     var checkValue = function(number) {
+        if(number === 0) {
+            return 'Zero';
+        }
+        
         if(number % 15 === 0) {
             return 'FizzBuzz';
         }
@@ -14,10 +18,6 @@ var FizzBuzz = function() {
 
         if(number % 5 === 0) {
             return 'Buzz';
-        }
-
-        if(number === 0) {
-            return 'Zero';
         }
     };
 
