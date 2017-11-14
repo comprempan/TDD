@@ -28,5 +28,10 @@ describe("FizzBuzz", function() {
             var result = FizzBuzz.check(15);
             expect(result).toEqual('FizzBuzz');
         });
+
+        it('should return Buzz for 30', function() {
+            var result = FizzBuzz.check(30);
+            expect(result).toEqual('FizzBuzz');
+        });
     });
 });
