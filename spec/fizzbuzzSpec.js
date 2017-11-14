@@ -34,4 +34,11 @@ describe("FizzBuzz", function() {
             expect(result).toEqual('FizzBuzz');
         });
     });
+
+    describe("Cero", function() {
+        it( 'should return Zero for 0', function() {
+            var result = FizzBuzz.check(0);
+            expect(result).toEqual('Zero');
+        });
+    });
 });
